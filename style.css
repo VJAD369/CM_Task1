@@ -1,0 +1,331 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.headerDisplay{
+  display: flex;
+  flex-direction: column;
+}
+
+/* Updated styles for the header */
+header {
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; 
+  background-color: black; 
+}
+
+/* Adjust margin-top for the container to prevent content overlap */
+.container {
+  margin-top: 80px;
+
+}
+
+/* Add these styles for smaller screens */
+@media (max-width: 584px) {
+  header {
+    position: relative;
+  }
+
+  .container {
+    margin-top: 0; 
+  }
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: #ffc107;
+}
+.content form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box {
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.user-details .input-boxs input {
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid
+{
+  border-color: #ffc107;
+}
+
+
+
+form .gender-details .gender-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+form .category {
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  justify-content: space-between;
+}
+form .category label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+form .category label .dot {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+form input[type="radio"] {
+  display: none;
+}
+form .button {
+  height: 45px;
+  margin: 35px 0;
+}
+form .button input {
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #ffc107;
+}
+form .button {
+  /* transform: scale(0.99); */
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #ffc107;
+}
+
+@media (max-width: 584px) {
+  .container {
+    max-width: 100%;
+  }
+  form .user-details .input-box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category {
+    width: 100%;
+  }
+  .content form .user-details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar {
+    width: 5px;
+  }
+}
+@media (max-width: 459px) {
+  .container .content .category {
+    flex-direction: column;
+  }
+}
+
+/* Eye Icon */
+
+.input-box {
+  position: relative;
+}
+
+.password-container {
+  position: relative;
+}
+
+#passwordInput {
+  padding-right: 35px; 
+}
+
+#togglePassword {
+  position: absolute;
+  top: 50%;
+  right: 10px; 
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* DROPDOWN COLOR */
+
+
+#educationDropdown,
+#genderDropdown {
+  border-color: #ffc107;
+}
+
+/* Customize the dropdown item color when clicked */
+.dropdown-menu a:focus,
+.dropdown-menu a:active {
+  background-color: #ffc107 !important;
+  color: #000 !important; 
+}
+
+/* DETAILS */
+
+.ad-container {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  max-width: 600px; 
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+/* Image style */
+.ad-image {
+  width: 150px; 
+  height: auto;
+  border-radius: 50%; 
+  margin-bottom: 20px; 
+}
+
+/* Information style */
+.ad-info {
+  text-align: center; 
+}
+
+/* Text style */
+.ad-info p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 992px) {
+  .ad-container {
+    max-width: 100%; 
+  }
+
+  .ad-image {
+    width: 50%; 
+    margin-bottom: 10px; 
+  }
+}
+
+/* ALIGN DATA IN CENTER */
+
+
+.user-details-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+/* Style the image */
+.user-details-container img {
+  max-width: 10%;
+  max-height: 10%;
+  margin-right: 10px; 
+}
+
+/* Adjust margins for the content */
+.content {
+  margin-left: 1rem;
+}
+
+/* Add media query for smaller screens */
+@media (max-width: 768px) {
+  .content {
+    margin-left: 0; 
+  }
+
+  /* Adjust styling for user details container on smaller screens */
+  .user-details-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Adjust styling for the image on smaller screens */
+  .user-details-container img {
+    max-width: 100%;
+    max-height: auto;
+    margin-bottom: 10px; 
+  }
+}
+
+
+
+
+
+

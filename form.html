@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+</head>
+<body style="background-color: black;">
+
+    <div class="container">
+       <!-- HEADER -->
+
+       <header class="p-3">
+        <div class="container">
+         <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+   
+           <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+             <div class="title">Registration</div>
+           </ul>
+   
+
+   
+           <div class="text-end" >
+             <a href="search.html">
+              <button id="searchButton" onclick="searchData()" type="button" class="btn btn-warning" >Search</button>
+            </a>
+           </div>
+         </div>
+       </div>
+     </header>
+        <div class="content">
+
+       <!-- FORM -->
+       
+      <form id="myForm" name="myForm" action="#">
+        
+        <div class="user-details">
+          <div class="input-box">
+            <span cdisplayDatalass="details">Full Name</span>
+            <input type="text" name="fullName" oninput="validateName(this)" placeholder="Enter your name" required>
+            <div class="error"></div>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" id="userName" name="userName" placeholder="Enter your username" required>
+            <div class="error"></div>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" name="email" oninput="validateEmail(this)" placeholder="Enter your email"required>
+            <div class="error"></div>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" name="phoneNumber" oninput="validateContactNumber(this)" placeholder="Enter your number" required>
+            <div class="error"></div>
+          </div>
+
+          <div class="input-box diffConatiner">
+            <span class="details">Password</span>
+            <div class="password-container">
+              <!-- <div> -->
+                <input type="password" name="password" id="passwordInput" oninput="validatePassword(this)" placeholder="Enter your password" required>
+                <i class="fas fa-eye-slash" id="togglePassword" onclick="togglePasswordVisibility()"></i>
+              <!-- </div> -->  
+          </div>
+          <div class="error" id="passwordError"></div>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="text" name="confirmPassword" id="confirmPasswordInput" oninput="validateConfirmPassword(this)" placeholder="Confirm your password" required>
+            <div class="error" d="confirmPasswordError"></div>
+          </div>
+        
+          <div class="input-box">
+            <span class="details">Occupation</span>
+            <input type="text" name="occupation" oninput="validateOccupation(this)" placeholder="Enter Your Occupation (Optional)" >
+            <div class="error"></div>
+          </div>
+
+        <div class="input-box">
+          <span class="details">DOB</span>
+          <input type="date" name="dateOfBirth" id="date" oninput="validateDateOfBirth(this)" required>
+          <div class="error"></div>
+        </div>
+
+        <div class="input-box">
+          <span class="details" style="font-weight: 500" >Gender</span>
+          <div class="dropdown">
+            <select id="genderDropdown" name="genderDropdown" class="form-select" >
+              <option id="items" value="" disabled selected>Select Gender</option>
+              <option id="items" value="Male">Male</option>
+              <option id="items" value="Female">Female</option>
+              <option id="items" value="Prefer Not to Say">Prefer Not to Say</option>
+          </select>          
+          </div>
+        </div>
+
+        <div class="input-box">
+          <span class="details" style="font-weight: 500" >Education</span>
+          <div class="dropdown">
+            <select id="educationDropdown" name="educationDropdown" class="form-select" >
+              <option id="items" value="" disabled selected>Select Education</option>
+              <option id="items" value="Bachelor's">Bachelor's</option>
+              <option id="items" value="Master's">Master's</option>
+              <option id="items" value="Ph.D">Ph.D</option>
+              <option id="items" value="Others">Others</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="input-box image">
+          <span class="details">Photo</span>
+          <input type="file" id="myFile" name="filename" accept=".jpg,.jpeg,.png" oninput="validatePhoto(this)" required>
+          <div class="error"></div>
+        </div>
+
+        <div class="input-box">
+          <span class="details">PAN Number</span>
+          <input type="text" name="panNumber" oninput="validatePanNumber(this)" placeholder="Enter Your PAN Number" required>
+          <div class="error"></div>
+        </div>
+
+        <div class="button">
+          <input type="submit" value="Register" ">
+        </div>
+      </form>
+    </div>
+  </div>
+    
+      
+</body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="form.js"></script>
+</html>
